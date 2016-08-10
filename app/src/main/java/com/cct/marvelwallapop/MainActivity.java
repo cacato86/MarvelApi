@@ -5,7 +5,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 
 import com.cct.marvelwallapop.domain.net.MarvelApiAdapter;
-import com.cct.marvelwallapop.domain.net.MarvelApiInterface;
+import com.cct.marvelwallapop.domain.repository.RepositoryImp;
+import com.cct.marvelwallapop.domain.repository.RepositoryInterface;
 
 import rx.android.schedulers.AndroidSchedulers;
 import rx.schedulers.Schedulers;
@@ -19,8 +20,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        MarvelApiInterface client = marvelApiAdapter.getRestAdapter();
-        client.getCharacters()
+        RepositoryInterface repository = new RepositoryImp(new MarvelApiAdapter());
+
+        repository.getCharacters()
                 .subscribeOn(Schedulers.newThread())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(

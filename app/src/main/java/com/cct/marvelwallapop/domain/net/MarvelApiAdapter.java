@@ -1,6 +1,7 @@
 package com.cct.marvelwallapop.domain.net;
 
-import com.cct.marvelwallapop.Constants;
+import com.cct.marvelwallapop.domain.net.ApiUtils.GenerateHash;
+import com.cct.marvelwallapop.domain.net.ApiUtils.GenerateTime;
 
 import okhttp3.HttpUrl;
 import okhttp3.OkHttpClient;
@@ -27,6 +28,7 @@ public class MarvelApiAdapter {
     private GenerateHash generateHash = new GenerateHash();
     private GenerateTime generateTime = new GenerateTime();
 
+    //asd
     public MarvelApiInterface getRestAdapter() {
 
         Retrofit retrofit = new Retrofit.Builder()

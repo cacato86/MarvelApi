@@ -1,4 +1,4 @@
-package com.cct.marvelwallapop.domain.net;
+package com.cct.marvelwallapop.domain.net.ApiUtils;
 
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
@@ -14,7 +14,7 @@ public class GenerateHash {
 
     private GenerateTime generateTime = new GenerateTime();
 
-    String getMd5Hash() {
+    public String getMd5Hash() {
         String finalHashString = generateTime.getTimeStamp() + APIKEY_PRIVATE + APIKEY_PUBLIC;
         try {
             MessageDigest md5Encoder = MessageDigest.getInstance("MD5");
