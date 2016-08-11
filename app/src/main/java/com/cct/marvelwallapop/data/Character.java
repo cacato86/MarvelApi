@@ -54,8 +54,8 @@ public class Character {
         this.comics = comics;
     }
 
-    public CharacterImage getImage() {
-        return image;
+    public String getImage() {
+        return image.getImage();
     }
 
     public void setImage(CharacterImage image) {

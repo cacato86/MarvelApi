@@ -10,10 +10,16 @@ import com.cct.marvelwallapop.di.component.ApplicationComponent;
 
 public class InjectorHelper {
 
-
     public static ApplicationComponent getApplicationComponent() {
         return MarvelApplication.getInstance().getApplicationComponent();
     }
 
+    /*public static PresenterComponent getPresenterComponent(Activity activityScope) {
+        return DaggerPresenterComponent.builder()
+                .applicationComponent(App.getInstance().getApplicationComponent())
+                .navigatorModule(new NavigatorModule(activityScope))
+                .presenterModule(new PresenterModule())
+                .build();
+    }*/
 
 }

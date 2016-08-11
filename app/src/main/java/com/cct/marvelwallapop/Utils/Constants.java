@@ -1,4 +1,4 @@
-package com.cct.marvelwallapop;
+package com.cct.marvelwallapop.Utils;
 
 /**
  * Created by carloscarrasco on 11/8/16.

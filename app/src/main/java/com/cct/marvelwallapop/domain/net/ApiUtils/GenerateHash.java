@@ -3,8 +3,8 @@ package com.cct.marvelwallapop.domain.net.ApiUtils;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
-import static com.cct.marvelwallapop.Constants.APIKEY_PRIVATE;
-import static com.cct.marvelwallapop.Constants.APIKEY_PUBLIC;
+import static com.cct.marvelwallapop.Utils.Constants.APIKEY_PRIVATE;
+import static com.cct.marvelwallapop.Utils.Constants.APIKEY_PUBLIC;
 
 /**
  * Created by carloscarrasco on 11/8/16.

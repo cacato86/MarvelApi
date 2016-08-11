@@ -2,9 +2,9 @@ package com.cct.marvelwallapop.di.component;
 
 import android.content.Context;
 
-import com.cct.marvelwallapop.MainActivity;
 import com.cct.marvelwallapop.di.module.ApplicationModule;
 import com.cct.marvelwallapop.domain.repository.RepositoryInterface;
+import com.cct.marvelwallapop.presentation.activity.CharacterList;
 
 import javax.inject.Singleton;
 
@@ -18,11 +18,9 @@ import dagger.Component;
 @Component(modules = ApplicationModule.class)
 public interface ApplicationComponent {
 
-    //If other component depends on this, this methods offers this objects to his sons
     Context provideContext();
 
     RepositoryInterface provideRepository();
 
-    void inject(MainActivity mainActivity);
-
+    void inject(CharacterList characterList);
 }

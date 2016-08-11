@@ -2,6 +2,8 @@ package com.cct.marvelwallapop.domain.repository;
 
 import com.cct.marvelwallapop.data.Character;
 
+import java.util.List;
+
 import rx.Observable;
 
 /**
@@ -9,5 +11,5 @@ import rx.Observable;
  */
 
 public interface RepositoryInterface {
-    Observable<Character> getCharacters();
+    Observable<List<Character>> getCharacters();
 }

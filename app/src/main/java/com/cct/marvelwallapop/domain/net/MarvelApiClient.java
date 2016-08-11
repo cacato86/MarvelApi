@@ -11,7 +11,7 @@ import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava.RxJavaCallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-import static com.cct.marvelwallapop.Constants.APIKEY_PUBLIC;
+import static com.cct.marvelwallapop.Utils.Constants.APIKEY_PUBLIC;
 
 /**
  * Created by carloscarrasco on 10/8/16.
