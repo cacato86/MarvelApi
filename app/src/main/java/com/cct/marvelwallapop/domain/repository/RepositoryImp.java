@@ -1,7 +1,7 @@
 package com.cct.marvelwallapop.domain.repository;
 
 import com.cct.marvelwallapop.data.Character;
-import com.cct.marvelwallapop.domain.net.MarvelApiAdapter;
+import com.cct.marvelwallapop.domain.net.RemoteRepository;
 
 import rx.Observable;
 
@@ -11,14 +11,15 @@ import rx.Observable;
 
 public class RepositoryImp implements RepositoryInterface {
 
-    private final MarvelApiAdapter marvelApiAdapter;
 
-    public RepositoryImp(MarvelApiAdapter marvelApiAdapter) {
-        this.marvelApiAdapter = marvelApiAdapter;
+    private final RemoteRepository remoteRepository;
+
+    public RepositoryImp(RemoteRepository remoteRepository) {
+        this.remoteRepository = remoteRepository;
     }
 
     @Override
     public Observable<Character> getCharacters() {
-        return marvelApiAdapter.getRestAdapter().getCharacters();
+        return remoteRepository.getCharacters();
     }
 }

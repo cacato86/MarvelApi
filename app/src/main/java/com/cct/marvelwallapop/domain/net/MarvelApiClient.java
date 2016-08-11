@@ -17,7 +17,7 @@ import static com.cct.marvelwallapop.Constants.APIKEY_PUBLIC;
  * Created by carloscarrasco on 10/8/16.
  */
 
-public class MarvelApiAdapter {
+public class MarvelApiClient {
 
     private static final String URL_BASE = "http://gateway.marvel.com";
 
@@ -25,23 +25,32 @@ public class MarvelApiAdapter {
     private static final String HASH_KEY = "hash";
     private static final String APIKEY_KEY = "apikey";
 
-    private GenerateHash generateHash = new GenerateHash();
-    private GenerateTime generateTime = new GenerateTime();
+    private GenerateHash generateHash;
+    private GenerateTime generateTime;
+    private MarvelApiInterface client;
 
-    //asd
-    public MarvelApiInterface getRestAdapter() {
 
-        Retrofit retrofit = new Retrofit.Builder()
-                .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
-                .addConverterFactory(GsonConverterFactory.create())
-                .baseUrl(URL_BASE)
-                .client(getRestClient())
-                .build();
-
-        return retrofit.create(MarvelApiInterface.class);
+    public MarvelApiClient(GenerateHash generateHash, GenerateTime generateTime) {
+        this.generateHash = generateHash;
+        this.generateTime = generateTime;
     }
 
-    private OkHttpClient getRestClient() {
+    public MarvelApiInterface getRestAdapter() {
+        if (client == null) {
+            Retrofit retrofit = new Retrofit.Builder()
+                    .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
+                    .addConverterFactory(GsonConverterFactory.create())
+                    .baseUrl(URL_BASE)
+                    .client(getOkhttpClient())
+                    .build();
+
+            client = retrofit.create(MarvelApiInterface.class);
+        }
+
+        return client;
+    }
+
+    private OkHttpClient getOkhttpClient() {
         OkHttpClient.Builder httpClient = new OkHttpClient.Builder();
 
         HttpLoggingInterceptor logging = new HttpLoggingInterceptor();
