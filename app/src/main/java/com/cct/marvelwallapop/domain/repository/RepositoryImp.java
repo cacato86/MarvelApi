@@ -1,6 +1,7 @@
 package com.cct.marvelwallapop.domain.repository;
 
 import com.cct.marvelwallapop.data.Character;
+import com.cct.marvelwallapop.data.Comic;
 import com.cct.marvelwallapop.data.MarvelResponse;
 import com.cct.marvelwallapop.domain.net.RemoteRepository;
 
@@ -23,11 +24,11 @@ public class RepositoryImp implements RepositoryInterface {
     }
 
     @Override
-    public Observable<List<Character>> getCharacters() {
-        return remoteRepository.getCharacters()
-                .flatMap(new Func1<MarvelResponse, Observable<List<Character>>>() {
+    public Observable<List<Comic>> getComics(String character_id) {
+        return remoteRepository.getComics(character_id)
+                .flatMap(new Func1<MarvelResponse, Observable<List<Comic>>>() {
                     @Override
-                    public Observable<List<Character>> call(MarvelResponse marvelResponse) {
+                    public Observable<List<Comic>> call(MarvelResponse marvelResponse) {
                         return Observable.just(marvelResponse.getResponse().getResults());
                     }
                 });

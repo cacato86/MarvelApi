@@ -3,11 +3,13 @@ package com.cct.marvelwallapop.data;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
+import java.io.Serializable;
+
 /**
  * Created by carloscarrasco on 10/8/16.
  */
 
-public class CharacterImage {
+public class Image implements Serializable{
 
     @SerializedName("path")
     @Expose

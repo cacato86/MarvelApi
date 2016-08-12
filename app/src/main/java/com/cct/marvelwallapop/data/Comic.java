@@ -4,28 +4,44 @@ package com.cct.marvelwallapop.data;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class Comic {
+import java.io.Serializable;
+import java.util.List;
 
-    @SerializedName("resourceURI")
+public class Comic implements Serializable {
+
+    @SerializedName("images")
     @Expose
-    private String resourceURI;
-    @SerializedName("name")
+    private List<Image> images;
+    @SerializedName("title")
     @Expose
-    private String name;
+    private String title;
+    @SerializedName("description")
+    @Expose
+    private String description;
 
-    public String getResourceURI() {
-        return resourceURI;
+    public String getDescription() {
+        return description;
     }
 
-    public void setResourceURI(String resourceURI) {
-        this.resourceURI = resourceURI;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
-    public String getName() {
-        return name;
+    public String getTitle() {
+        return title;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setTitle(String title) {
+        this.title = title;
     }
+
+    public List<Image> getImages() {
+        return images;
+    }
+
+    public void setImages(List<Image> images) {
+        this.images = images;
+    }
+
+
 }

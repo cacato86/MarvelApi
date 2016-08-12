@@ -1,11 +1,9 @@
 package com.cct.marvelwallapop.domain.net;
 
-import com.cct.marvelwallapop.data.Character;
 import com.cct.marvelwallapop.data.MarvelResponse;
 
-import java.util.List;
-
 import retrofit2.http.GET;
+import retrofit2.http.Path;
 import rx.Observable;
 
 /**
@@ -14,6 +12,6 @@ import rx.Observable;
 
 public interface MarvelApiInterface {
 
-    @GET("v1/public/characters")
-    Observable<MarvelResponse> getCharacters();
+    @GET("v1/public/characters/{character_id}/comics")
+    Observable<MarvelResponse> getComics(@Path("character_id") String character_id);
 }

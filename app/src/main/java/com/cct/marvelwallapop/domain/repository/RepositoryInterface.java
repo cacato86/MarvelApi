@@ -1,6 +1,7 @@
 package com.cct.marvelwallapop.domain.repository;
 
 import com.cct.marvelwallapop.data.Character;
+import com.cct.marvelwallapop.data.Comic;
 
 import java.util.List;
 
@@ -11,5 +12,5 @@ import rx.Observable;
  */
 
 public interface RepositoryInterface {
-    Observable<List<Character>> getCharacters();
+    Observable<List<Comic>> getComics(String character_id);
 }

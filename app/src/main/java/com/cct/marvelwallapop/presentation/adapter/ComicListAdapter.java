@@ -1,5 +1,6 @@
 package com.cct.marvelwallapop.presentation.adapter;
 
+import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -8,7 +9,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.cct.marvelwallapop.R;
-import com.cct.marvelwallapop.data.Character;
+import com.cct.marvelwallapop.data.Comic;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
@@ -21,9 +22,14 @@ import butterknife.ButterKnife;
  * Created by carloscarrasco on 11/8/16.
  */
 
-public class CharacterListAdapter extends RecyclerView.Adapter<CharacterListAdapter.ViewHolder> {
+public class ComicListAdapter extends RecyclerView.Adapter<ComicListAdapter.ViewHolder> {
 
-    private List<Character> characters = new ArrayList<>();
+    private List<Comic> comics = new ArrayList<>();
+    private onItemClick mOnItemClick;
+
+    public void setListener(onItemClick onItemClick) {
+        mOnItemClick = onItemClick;
+    }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
 
@@ -31,6 +37,8 @@ public class CharacterListAdapter extends RecyclerView.Adapter<CharacterListAdap
         ImageView character_image;
         @BindView(R.id.character_name)
         TextView character_name;
+        @BindView(R.id.cv)
+        CardView cv;
 
         ViewHolder(View itemView) {
             super(itemView);
@@ -38,14 +46,14 @@ public class CharacterListAdapter extends RecyclerView.Adapter<CharacterListAdap
         }
     }
 
-    public void setCharactersArray(List<Character> charactersArray) {
-        this.characters = charactersArray;
+    public void setCharactersArray(List<Comic> comicsArray) {
+        this.comics = comicsArray;
         notifyDataSetChanged();
     }
 
     @Override
     public int getItemCount() {
-        return characters.size();
+        return comics.size();
     }
 
     @Override
@@ -57,9 +65,11 @@ public class CharacterListAdapter extends RecyclerView.Adapter<CharacterListAdap
     @Override
     public void onBindViewHolder(ViewHolder viewHolder, int position) {
         Picasso.with(viewHolder.character_image.getContext())
-                .load(characters.get(position).getImage())
+                .load(comics.get(position).getImages().get(0).getImage())
                 .into(viewHolder.character_image);
-        viewHolder.character_name.setText(characters.get(position).getName());
+        viewHolder.character_name.setText(comics.get(position).getTitle());
+        viewHolder.cv.setOnClickListener(
+                view -> mOnItemClick.onItemClick(comics.get(position), viewHolder.character_image));
     }
 
     @Override
@@ -67,5 +77,7 @@ public class CharacterListAdapter extends RecyclerView.Adapter<CharacterListAdap
         super.onAttachedToRecyclerView(recyclerView);
     }
 
-
+    public interface onItemClick {
+        void onItemClick(Comic comic, View view);
+    }
 }

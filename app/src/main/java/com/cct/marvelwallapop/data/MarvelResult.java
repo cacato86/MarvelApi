@@ -1,11 +1,11 @@
 
 package com.cct.marvelwallapop.data;
 
-import java.util.ArrayList;
-import java.util.List;
-import javax.annotation.Generated;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class MarvelResult {
 
@@ -23,95 +23,75 @@ public class MarvelResult {
     private Integer count;
     @SerializedName("results")
     @Expose
-    private List<Character> results = new ArrayList<>();
+    private List<Comic> results = new ArrayList<>();
 
     /**
-     * 
-     * @return
-     *     The offset
+     * @return The offset
      */
     public Integer getOffset() {
         return offset;
     }
 
     /**
-     * 
-     * @param offset
-     *     The offset
+     * @param offset The offset
      */
     public void setOffset(Integer offset) {
         this.offset = offset;
     }
 
     /**
-     * 
-     * @return
-     *     The limit
+     * @return The limit
      */
     public Integer getLimit() {
         return limit;
     }
 
     /**
-     * 
-     * @param limit
-     *     The limit
+     * @param limit The limit
      */
     public void setLimit(Integer limit) {
         this.limit = limit;
     }
 
     /**
-     * 
-     * @return
-     *     The total
+     * @return The total
      */
     public Integer getTotal() {
         return total;
     }
 
     /**
-     * 
-     * @param total
-     *     The total
+     * @param total The total
      */
     public void setTotal(Integer total) {
         this.total = total;
     }
 
     /**
-     * 
-     * @return
-     *     The count
+     * @return The count
      */
     public Integer getCount() {
         return count;
     }
 
     /**
-     * 
-     * @param count
-     *     The count
+     * @param count The count
      */
     public void setCount(Integer count) {
         this.count = count;
     }
 
     /**
-     * 
-     * @return
-     *     The results
+     * @return The results
      */
-    public List<Character> getResults() {
+    public List<Comic> getResults() {
         return results;
     }
 
     /**
-     * 
-     * @param results
-     *     The results
+     * @param results The results
      */
-    public void setResults(List<Character> results) {
+    public void setResults(List<Comic> results) {
         this.results = results;
     }
 

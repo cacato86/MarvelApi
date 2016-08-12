@@ -20,7 +20,7 @@ public class Character {
     private Comics comics;
     @SerializedName("thumbnail")
     @Expose
-    private CharacterImage image;
+    private Image image;
 
     public String getId() {
         return id;
@@ -58,7 +58,7 @@ public class Character {
         return image.getImage();
     }
 
-    public void setImage(CharacterImage image) {
+    public void setImage(Image image) {
         this.image = image;
     }
 }

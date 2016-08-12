@@ -1,12 +1,8 @@
 package com.cct.marvelwallapop.domain.net;
 
-import com.cct.marvelwallapop.data.Character;
 import com.cct.marvelwallapop.data.MarvelResponse;
 
-import java.util.List;
-
 import rx.Observable;
-import rx.functions.Func1;
 
 /**
  * Created by carloscarrasco on 11/8/16.
@@ -22,7 +18,7 @@ public class RemoteRepository implements MarvelApiInterface {
     }
 
     @Override
-    public Observable<MarvelResponse> getCharacters() {
-        return client.getRestAdapter().getCharacters();
+    public Observable<MarvelResponse> getComics(String character_id) {
+        return client.getRestAdapter().getComics(character_id);
     }
 }

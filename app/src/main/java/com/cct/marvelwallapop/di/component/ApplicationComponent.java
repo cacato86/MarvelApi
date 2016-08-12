@@ -4,7 +4,6 @@ import android.content.Context;
 
 import com.cct.marvelwallapop.di.module.ApplicationModule;
 import com.cct.marvelwallapop.domain.repository.RepositoryInterface;
-import com.cct.marvelwallapop.presentation.activity.CharacterList;
 
 import javax.inject.Singleton;
 
@@ -21,6 +20,4 @@ public interface ApplicationComponent {
     Context provideContext();
 
     RepositoryInterface provideRepository();
-
-    void inject(CharacterList characterList);
 }
