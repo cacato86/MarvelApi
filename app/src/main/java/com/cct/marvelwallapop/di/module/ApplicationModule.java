@@ -9,6 +9,7 @@ import android.content.Context;
 
 import com.cct.marvelwallapop.domain.net.ApiUtils.GenerateHash;
 import com.cct.marvelwallapop.domain.net.ApiUtils.GenerateTime;
+import com.cct.marvelwallapop.domain.net.ApiUtils.OkHttpClientFactory;
 import com.cct.marvelwallapop.domain.net.MarvelApiClient;
 import com.cct.marvelwallapop.domain.net.RemoteRepository;
 import com.cct.marvelwallapop.domain.repository.RepositoryImp;
@@ -37,9 +38,10 @@ public class ApplicationModule {
     @Provides
     @Singleton
     public RepositoryInterface provideRepository() {
-        GenerateHash generateHash = new GenerateHash();
         GenerateTime generateTime = new GenerateTime();
-        MarvelApiClient marvelApiClient = new MarvelApiClient(generateHash, generateTime);
+        GenerateHash generateHash = new GenerateHash();
+        OkHttpClientFactory okHttpClientFactory = new OkHttpClientFactory(generateHash, generateTime);
+        MarvelApiClient marvelApiClient = new MarvelApiClient(okHttpClientFactory.getOkhttpClient());
 
         RemoteRepository remoteRepository = new RemoteRepository(marvelApiClient);
 

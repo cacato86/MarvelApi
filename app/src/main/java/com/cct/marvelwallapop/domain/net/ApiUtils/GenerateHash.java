@@ -3,19 +3,14 @@ package com.cct.marvelwallapop.domain.net.ApiUtils;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
-import static com.cct.marvelwallapop.Utils.Constants.APIKEY_PRIVATE;
-import static com.cct.marvelwallapop.Utils.Constants.APIKEY_PUBLIC;
-
 /**
  * Created by carloscarrasco on 11/8/16.
  */
 
 public class GenerateHash {
 
-    private GenerateTime generateTime = new GenerateTime();
-
-    public String getMd5Hash() {
-        String finalHashString = generateTime.getTimeStamp() + APIKEY_PRIVATE + APIKEY_PUBLIC;
+    public String getMd5Hash(Long timeStamp, String apikeyPrivate, String apikeyPublic) {
+        String finalHashString = timeStamp + apikeyPrivate + apikeyPublic;
         try {
             MessageDigest md5Encoder = MessageDigest.getInstance("MD5");
             byte[] md5Bytes = md5Encoder.digest(finalHashString.getBytes());
