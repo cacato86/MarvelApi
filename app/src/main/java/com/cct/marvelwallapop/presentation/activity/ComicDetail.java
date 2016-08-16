@@ -41,7 +41,7 @@ public class ComicDetail extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_character_detail);
+        setContentView(R.layout.activity_comic_detail);
         ButterKnife.bind(this);
 
         Bundle bundle = getIntent().getExtras();

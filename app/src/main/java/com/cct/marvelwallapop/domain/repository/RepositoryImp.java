@@ -1,6 +1,5 @@
 package com.cct.marvelwallapop.domain.repository;
 
-import com.cct.marvelwallapop.data.Character;
 import com.cct.marvelwallapop.data.Comic;
 import com.cct.marvelwallapop.data.MarvelResponse;
 import com.cct.marvelwallapop.domain.net.RemoteRepository;

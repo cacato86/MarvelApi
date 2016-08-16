@@ -3,6 +3,7 @@ package com.cct.marvelwallapop.di.component;
 import android.content.Context;
 
 import com.cct.marvelwallapop.di.module.ApplicationModule;
+import com.cct.marvelwallapop.domain.net.ApiUtils.OkHttpClientFactory;
 import com.cct.marvelwallapop.domain.repository.RepositoryInterface;
 
 import javax.inject.Singleton;
@@ -18,6 +19,8 @@ import dagger.Component;
 public interface ApplicationComponent {
 
     Context provideContext();
+
+    OkHttpClientFactory provideOkhttpClient();
 
     RepositoryInterface provideRepository();
 }

@@ -39,7 +39,7 @@ public class ComicList extends AppCompatActivity implements ComicViewContract, C
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_character_list);
+        setContentView(R.layout.activity_comic_list);
         ButterKnife.bind(this);
         InjectorHelper.getPresenterComponent().inject(this);
 

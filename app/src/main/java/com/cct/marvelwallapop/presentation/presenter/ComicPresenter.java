@@ -5,7 +5,6 @@ import android.os.Build;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.ActivityOptionsCompat;
 import android.view.View;
-import android.widget.ImageView;
 
 import com.cct.marvelwallapop.R;
 import com.cct.marvelwallapop.Utils.Constants;

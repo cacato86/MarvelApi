@@ -3,11 +3,9 @@ package com.cct.marvelwallapop.di;
 
 import com.cct.marvelwallapop.MarvelApplication;
 import com.cct.marvelwallapop.di.component.ApplicationComponent;
-import com.cct.marvelwallapop.di.component.DaggerApplicationComponent;
 import com.cct.marvelwallapop.di.component.DaggerPresenterComponent;
 import com.cct.marvelwallapop.di.component.PresenterComponent;
 import com.cct.marvelwallapop.di.module.PresenterModule;
-import com.cct.marvelwallapop.presentation.presenter.ComicPresenterContract;
 
 /**
  * Created by carloscarrasco on 11/8/16.

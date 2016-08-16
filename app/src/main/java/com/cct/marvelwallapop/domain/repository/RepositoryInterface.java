@@ -1,6 +1,5 @@
 package com.cct.marvelwallapop.domain.repository;
 
-import com.cct.marvelwallapop.data.Character;
 import com.cct.marvelwallapop.data.Comic;
 
 import java.util.List;

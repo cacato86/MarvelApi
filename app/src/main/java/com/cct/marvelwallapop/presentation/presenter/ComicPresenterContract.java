@@ -5,10 +5,6 @@ import android.view.View;
 import com.cct.marvelwallapop.data.Comic;
 import com.cct.marvelwallapop.presentation.activity.ComicViewContract;
 
-import java.util.List;
-
-import rx.Observable;
-
 /**
  * Created by carloscarrasco on 12/8/16.
  */
